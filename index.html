@@ -258,6 +258,151 @@
         opacity: 1;
       }
     }
+    /* =============================================
+       TICKETS SECTION
+    ============================================= */
+    .ln-tickets {
+      background: #0a0a0a;
+      color: #fff;
+      text-align: center;
+      padding: 60px 24px;
+      font-family: 'Georgia', serif;
+    }
+
+    .ln-tickets__eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.75rem;
+      color: #c0392b;
+      margin-bottom: 12px;
+    }
+
+    .ln-tickets__heading {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .ln-tickets__subhead {
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 48px;
+    }
+
+    .ln-tickets__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto 48px;
+    }
+
+    .ln-ticket-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 36px 32px;
+      min-width: 220px;
+      flex: 1 1 220px;
+      max-width: 260px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .ln-ticket-card:hover {
+      border-color: #c0392b;
+      transform: translateY(-4px);
+    }
+
+    .ln-ticket-card--featured {
+      border-color: #c0392b;
+      background: #170000;
+    }
+
+    .ln-ticket-card__tier {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: #c0392b;
+      margin-bottom: 16px;
+    }
+
+    .ln-ticket-card__price {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .ln-ticket-card__price sup {
+      font-size: 1.2rem;
+      vertical-align: super;
+    }
+
+    .ln-ticket-card__label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .ln-ticket-card__perks {
+      list-style: none;
+      padding: 0;
+      font-size: 0.85rem;
+      color: #aaa;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+
+    .ln-ticket-card__perks li {
+      padding: 5px 0;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .ln-ticket-card__perks li::before {
+      content: "✓  ";
+      color: #c0392b;
+    }
+
+    .ln-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .ln-btn--primary {
+      background: #c0392b;
+      color: #fff;
+    }
+
+    .ln-btn--primary:hover {
+      background: #e74c3c;
+    }
+
+    .ln-btn--outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    .ln-btn--outline:hover {
+      border-color: #c0392b;
+      color: #c0392b;
+    }
+
+    .ln-tickets__note {
+      font-size: 0.78rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -299,6 +444,59 @@
     </div>
 
   </header>
+
+
+  <!-- =============================================
+       TICKETS SECTION
+  ============================================= -->
+  <section class="ln-tickets">
+    <p class="ln-tickets__eyebrow">Get In</p>
+    <h2 class="ln-tickets__heading">Tickets</h2>
+    <p class="ln-tickets__subhead">Thursday Nights · Doors 8 PM · Show 9 PM</p>
+
+    <div class="ln-tickets__cards">
+
+      <div class="ln-ticket-card">
+        <p class="ln-ticket-card__tier">General</p>
+        <p class="ln-ticket-card__price"><sup>$</sup>15</p>
+        <p class="ln-ticket-card__label">per person</p>
+        <ul class="ln-ticket-card__perks">
+          <li>General admission entry</li>
+          <li>Full show access</li>
+          <li>Cash bar available</li>
+        </ul>
+        <a class="ln-btn ln-btn--outline" href="#">Buy Tickets</a>
+      </div>
+
+      <div class="ln-ticket-card ln-ticket-card--featured">
+        <p class="ln-ticket-card__tier">VIP Table</p>
+        <p class="ln-ticket-card__price"><sup>$</sup>45</p>
+        <p class="ln-ticket-card__label">per person</p>
+        <ul class="ln-ticket-card__perks">
+          <li>Reserved table seating</li>
+          <li>Priority entry</li>
+          <li>Welcome cocktail</li>
+          <li>Meet &amp; greet access</li>
+        </ul>
+        <a class="ln-btn ln-btn--primary" href="#">Buy Tickets</a>
+      </div>
+
+      <div class="ln-ticket-card">
+        <p class="ln-ticket-card__tier">Student</p>
+        <p class="ln-ticket-card__price"><sup>$</sup>10</p>
+        <p class="ln-ticket-card__label">valid student ID required</p>
+        <ul class="ln-ticket-card__perks">
+          <li>General admission entry</li>
+          <li>Full show access</li>
+          <li>Cash bar available</li>
+        </ul>
+        <a class="ln-btn ln-btn--outline" href="#">Buy Tickets</a>
+      </div>
+
+    </div>
+
+    <p class="ln-tickets__note">All sales final · No refunds · 21+ for bar service</p>
+  </section>
 
 </body>
 </html>
