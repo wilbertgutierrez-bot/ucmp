@@ -201,6 +201,20 @@
     }
 
     /* =============================================
+       ZEFFY FORM
+    ============================================= */
+    .zeffy-wrapper {
+      width: 100%;
+      background: #fff;
+    }
+
+    .zeffy-wrapper iframe {
+      border: 0;
+      width: 100%;
+      display: block;
+    }
+
+    /* =============================================
        RESPONSIVE – MOBILE (≤540px)
     ============================================= */
     @media (max-width: 540px) {
@@ -299,6 +313,30 @@
     </div>
 
   </header>
+
+  <div class="zeffy-wrapper">
+    <iframe
+      id="zeffy-iframe"
+      title="Donation form powered by Zeffy"
+      src="https://www.zeffy.com/embed/ticketing/latin-night-thursdays-with-the-richard-sanchez-flamenco-trio"
+      allowpaymentrequest
+      allowTransparency="true"
+      scrolling="no"
+    ></iframe>
+  </div>
+
+  <script>
+    window.addEventListener('message', function (e) {
+      var iframe = document.getElementById('zeffy-iframe');
+      if (!iframe) return;
+      try {
+        var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data && typeof data.height === 'number') {
+          iframe.style.height = data.height + 'px';
+        }
+      } catch (err) {}
+    });
+  </script>
 
 </body>
 </html>
